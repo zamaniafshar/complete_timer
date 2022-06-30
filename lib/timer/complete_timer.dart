@@ -44,7 +44,7 @@ abstract class CompleteTimer {
   /// Whether the [CompleteTimer] is currently running.
   bool get isRunning;
 
-  /// Starts the timer, you don't need to call it
+  /// Start the timer, you don't need to call it
   /// if [autoStart] sets true and timer automatically starts.
   ///
   /// If call when the timer already started, then it resume the timer
