@@ -1,39 +1,45 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+A timer that can be configured to fire once or repeatedly with ability
+start, stop, resume and cancel.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add Get to your pubspec.yaml file:
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+```yaml
+dependencies:
+  dio: ^4.0.6
+```
+Import get in files that it will be used:
 
 ```dart
-const like = 'sample';
+import 'package:complete_timer/complete_timer.dart';
+```
+## How to use?
+Create an CompleteTimer object and give duration and callback you want to fire after the given duration.
+
+The timer starts automatically.
+```dart
+final CompleteTimer timer = CompleteTimer(
+    duration: Duration(seconds: 5),
+    // The callback will call after 5 seconds 
+    callback: (timer) {
+      print('timer finished');
+    },
+  );
 ```
 
-## Additional information
+### Pause Timer
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+  timer.stop();
+```
+
+### Resume Timer
+```dart
+  timer.start();
+```
+### Cancel Timer
+
+```dart
+  timer.cancel();
+```
