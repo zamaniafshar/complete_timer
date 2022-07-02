@@ -46,8 +46,7 @@ class ResumableTimer implements CompleteTimer {
 
   @override
   void cancel() {
-    stopwatch.stop();
-    timer.cancel();
+    stop();
     stopwatch.reset();
     tick = 0;
   }
