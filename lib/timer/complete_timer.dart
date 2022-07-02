@@ -6,8 +6,6 @@ typedef Callback = void Function(CompleteTimer timer);
 
 /// A timer that can be configured to fire once or repeatedly with ability
 /// [start], [stop], [resume] and [cancel]
-///
-/// Note: this class uses [Timer] and [StopWatch]
 abstract class CompleteTimer {
   /// Creates a new timer
   ///
@@ -15,7 +13,7 @@ abstract class CompleteTimer {
   ///
   /// If [autoStart] sets true timer starts automatically, default to true.
   ///
-  /// If [periodic] sets true timer fires repeatedly
+  /// If [periodic] sets true
   /// The [callback] is invoked repeatedly with [duration] intervals until
   /// canceled with the [cancel] function.
   /// Defaults to false
@@ -45,16 +43,20 @@ abstract class CompleteTimer {
   bool get isRunning;
 
   /// Start the timer, you don't need to call it
-  /// if [autoStart] sets true and timer automatically starts.
+  /// if [autoStart] sets true.
   ///
   /// If call when the timer already started, then it resume the timer
   /// which this means [elapsed] and [tick] starts increasing from their previous value
   void start() {}
 
-  /// Stop the timer and [elapsed] and [tick] stops increasing,
-  /// if call when timer is stopped does nothing.
+  /// Stop the timer.
+  ///
+  /// The [elapsed] and [tick] stops increasing after this call.
+  /// If call when timer is stopped does nothing.
   void stop() {}
 
-  /// Cancel the timer and reset [elapsed] and [tick]
+  /// Cancel the timer.
+  ///
+  /// The [elapsed] and [tick] resets after this call.
   void cancel() {}
 }
