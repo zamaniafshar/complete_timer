@@ -7,7 +7,7 @@ Add Get to your pubspec.yaml file:
 
 ```yaml
 dependencies:
-  dio: ^4.0.6
+  complete_timer: ^1.0.0
 ```
 Import get in files that it will be used:
 
