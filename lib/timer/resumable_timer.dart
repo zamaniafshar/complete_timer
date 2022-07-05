@@ -54,8 +54,8 @@ class ResumableTimer implements CompleteTimer {
   void initTimer(Duration duration) {
     timer = Timer(duration, () {
       tick++;
+      cancel();
       options.callback(this);
-      stop();
     });
   }
 }

@@ -2,6 +2,15 @@ import 'dart:async';
 
 import 'package:complete_timer/complete_timer.dart';
 
+void main(List<String> args) {
+  var timer = CompleteTimer(
+      duration: Duration(seconds: 2),
+      callback: (timer) {
+        print('finish');
+        timer.start();
+      });
+}
+
 void normalTimerExample() {
   print('start normal timer');
 
