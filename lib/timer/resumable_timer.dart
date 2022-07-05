@@ -20,7 +20,7 @@ class ResumableTimer implements CompleteTimer {
   int tick = 0;
 
   @override
-  Duration get elapsed => stopwatch.elapsed;
+  Duration get elapsedTime => stopwatch.elapsed;
 
   @override
   void start() {
@@ -40,8 +40,8 @@ class ResumableTimer implements CompleteTimer {
   }
 
   void resume() {
-    Duration leftDuration = options.duration - stopwatch.elapsed;
-    initTimer(leftDuration);
+    Duration remainingDuration = options.duration - elapsedTime;
+    initTimer(remainingDuration);
   }
 
   @override

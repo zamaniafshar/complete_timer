@@ -23,7 +23,7 @@ void normalTimerExample() {
       print('normal example');
       timer.stop();
       // We call stop function before getting elapsed time to get a exact time.
-      print('normal timer finished after: ${timer.elapsed}');
+      print('normal timer finished after: ${timer.elapsedTime}');
     },
   );
 
@@ -58,7 +58,7 @@ void periodic(List<String> args) {
       if (timer.tick == 5) {
         // We call stop function before getting elapsed time to get a exact time
         timer.stop();
-        print('periodic timer finished after: ${timer.elapsed}');
+        print('periodic timer finished after: ${timer.elapsedTime}');
         timer.cancel();
       }
     },

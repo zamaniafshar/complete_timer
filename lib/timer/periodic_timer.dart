@@ -6,11 +6,11 @@ class PeriodicTimer extends ResumableTimer {
 
   @override
   void resume() {
-    int microseconds = (options.duration.inMicroseconds * (tick + 1)) -
+    int remainingMicroseconds = (options.duration.inMicroseconds * (tick + 1)) -
         stopwatch.elapsedMicroseconds;
 
-    Duration leftDuration = Duration(microseconds: microseconds);
-    timer = Timer(leftDuration, () {
+    Duration remainingDuration = Duration(microseconds: remainingMicroseconds);
+    timer = Timer(remainingDuration, () {
       tick++;
       initTimer(options.duration);
       options.callback(this);
