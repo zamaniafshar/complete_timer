@@ -77,4 +77,4 @@ final CompleteTimer timer = CompleteTimer(
         occurs, so each callback will see a larger value than the previous one.
         
  - #### isRunning
-        Whether the [CompleteTimer] is currently running.
+        Whether the CompleteTimer is currently running.
