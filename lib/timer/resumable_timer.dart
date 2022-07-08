@@ -35,6 +35,7 @@ class ResumableTimer implements CompleteTimer {
 
   @override
   void stop() {
+    if (stopwatch.elapsedMicroseconds == 0) return;
     stopwatch.stop();
     timer.cancel();
   }
