@@ -1,5 +1,5 @@
 name: complete_timer
-description: A starting point for Dart libraries or applications.
+description: A dart timer that can be configured to fire once or repeatedly with ability start, stop, resume and cancel.
 version: 1.0.0
 homepage: https://github.com/MohammadAminZamaniAfshar/complete_timer
 
